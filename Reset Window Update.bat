@@ -204,10 +204,10 @@ net start wuauserv
 net start appidsvc
 net start cryptsvc
 
-: Autorestart will be executed
-shutdown /r /f /t 300
-
 
 : Change dns server to cloudflare server
 netsh interface ip set dns name="Wi-Fi" source="static" address="1.1.1.1"
 netsh interface ip add dns name="Wi-Fi" addr="1.0.0.1" index=2
+
+: Autorestart will be executed
+shutdown /r /f /t 300
