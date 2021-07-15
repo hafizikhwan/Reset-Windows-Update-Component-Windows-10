@@ -1,1 +1,0 @@
-# Reset-Windows-Update-Component-WIndows-10
