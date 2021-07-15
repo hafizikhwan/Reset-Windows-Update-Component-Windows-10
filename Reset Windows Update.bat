@@ -8,11 +8,6 @@ If "%1"=="%Variable%" (echo. &echo. Please right-click on the file and select &e
 cmd /u /c echo Set UAC = CreateObject^("Shell.Application"^) : UAC.ShellExecute "%~0", "%Variable%", "", "runas", 1 > "%temp%\getadmin.vbs"&cscript //nologo "%temp%\getadmin.vbs" & exit
 :(Privileges_got)
 
-
-:: Change dns server to cloudflare server
-netsh interface ip set dns name="Wi-Fi" source="static" address="1.1.1.1"
-netsh interface ip add dns name="Wi-Fi" addr="1.0.0.1" index=2
-
 :: Checking and Stopping the Windows Update services
 set b=0
 
@@ -208,6 +203,10 @@ net start bits
 net start wuauserv
 net start appidsvc
 net start cryptsvc
+
+:: Change dns server to cloudflare server
+netsh interface ip set dns name="Wi-Fi" source="static" address="1.1.1.1"
+netsh interface ip add dns name="Wi-Fi" addr="1.0.0.1" index=2
 
 : Autorestart will be executed in 5 minutes
 shutdown /r /f /t 300
