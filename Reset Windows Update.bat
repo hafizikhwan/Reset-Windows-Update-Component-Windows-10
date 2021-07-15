@@ -209,5 +209,5 @@ net start wuauserv
 net start appidsvc
 net start cryptsvc
 
-: Autorestart will be executed
+: Autorestart will be executed in 5 minutes
 shutdown /r /f /t 300
